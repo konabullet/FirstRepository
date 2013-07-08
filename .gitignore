@@ -16,3 +16,344 @@ profile
 *.moved-aside
 DerivedData
 .idea/
+
+
+Challenge 3
+
+CHALLENGE 3
+
+Section 1
+1.3 Updates to this course
+It's important to be aware of the idiosyncrasies with older versions since they still existed, and you will end up seeing them as you learn to code, since they still theoretically work. You should keep up with new features for the same reasons, and the fact that they are generally added to make your life easier when coding.
+
+Section 2
+2.1 The Objective-C language
+Objective-C is interwoven through the different languages and while it was licensed by Next, it was then acquired by apple. It's the platform that has been used throughout the history but buit upon.
+
+2.2 The structure
+#import <Foundation/Foundation.h> // this is like include and tells us we can use foundation
+
+int main(int argc, const char * argv[]) // indicates main
+{ // where it begins
+
+    @autoreleasepool { //where it begins
+        
+        // insert code here...
+        NSLog(@"Hello, World!"); // instructs the console t output the phrase "Hello, World!"
+        
+    } // where it ends
+    return 0; // main was successful
+} // where it ends
+
+2.3 Compiling and running
+You would deploy generally in the latest language you have, but possibly your users may not have access to this, or you want to broaden your target, so you can then deploy as an older version for greater flexibility.
+
+Section 3
+3.1 Logging messages
+#import <Foundation/Foundation.h>
+
+int main(int argc, const char * argv[])
+{
+
+    @autoreleasepool {
+        
+        // insert code here...
+        int seconds = 60;
+        int minutes = 60;
+        int hours = 24;
+        int days = 365;
+        
+        int secondsInAYear = seconds * minutes * hours * days;
+        
+        
+        NSLog(@"There are %i seconds in a year.",secondsInAYear);
+        NSLog(@"There are %i seconds in ten years.",secondsInAYear * 10);
+        
+        
+    }
+    return 0;
+}
+
+
+3.2 Writing conditional code
+    @autoreleasepool {
+        
+        int day = 1;
+        
+        
+        
+        if (5 < day < 8) {
+            NSLog(@"Have a nice weekend");
+        }
+        else if (day < 6) {
+            NSLog(@"I hope you're having a good week!");
+        }
+        
+    }
+    return 0;
+}
+
+
+3.3 The stitch statement
+int hurricaneCategory = 3;
+        
+        switch (hurricaneCategory) {
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+                NSLog(@"It's a category 1-5");
+                break;
+                
+        }
+               
+    }
+    return 0;
+
+3.4 Code Snippets
+// insert code here...
+        NSLog(@"Hello, World!");
+        switch (<#expression#>) { // add expression we want to switch
+            case <#constant#>: //
+                <#statements#> // what will happen if this is true
+                break; // to make sure it doesn't fall through
+                
+            default: // if nothing else
+                break; //end
+        }
+
+Approx time - 3 minutes
+
+3.5 Operators and Expressions
+
+The operators are
+Arithmetic - these are the common +,-,* and/. You would use a + b or a += 10 to execute them
+Comparison operators are for example ==. Again the syntax is that they are a single operator, and this is asking you to compare is a == 40 - is a equal to 40 as opposed to assigning a number
+Logic operators are for example && and ||, which are and, and or. for example if a = 10 && b = 6.
+Modulus operators are used to calculate remainders. They only work on integers and are used to calculate the remainder for example int year = 2003; int remainder = year % 4; remainder is 3. You can use this to calculate leap years
+Increment/Decrement operators are for example a++;, and it increments a for one in this example. You can decrement a by one is the same way with a--.
+Prefix and Postfix operators determine whether the code increments or decrements as its executing, or after it has finished.
+The ternary operator has three parts to it and two symbols - condition ? true : false
+It's like a mini if/else statement.
+
+3.6 Loops
+I can't really think of a scenario why you would use continue but I assume probably a type of game? I'm not sure why every time you could divide by 5 you would want to go back and check t he conditionals.
+
+3.7 Functions
+A function is a chunk of related code that is given a name. A function requires parameters to tell it whether it needs some information. You also need the return type - does it send something back.
+A function prototype is just showing that a function exists. It doesn't have a body but it tells the computer that the function is coming up later. You can call a function, the only one that automatically is called is main. You have to call a function within main to be able to use it.
+
+Section 4
+4.1 Data Types
+The primitive data types are int, float, double and char, and also boolean. Classes have been written to make it easier for us, such as NSString and NSDate as they are composite data types.
+
+4.2 
+an int is usually 4 bytes,  				integer between -2147483648 and 
+but can be altered using short and long,	and 2147483647
+and is always a whole number.
+
+float and double are point numbers - 		float btw 1.175494353^-38 and 
+where the double is a double-precision 		3.40282347^38
+number which typically has more bits.		double - 2.22507^-e308 and e^308
+
+4.3 Characters
+
+A char is a one byte integer that			can only hold one character
+is a character
+
+A BOOL is an int type that can either		all uppercase, and YES or NO. can
+be true or false							ask %i to get back 1 = yes.
+
+
+4.4 Variable Scope
+
+A variable only exists within the scope it was created in, such as if it was created in an if statement, it only exists within those braces. This is important as you can create it outside of main function and make it global but it can also then be redefined as well by other parts of the code which may make it difficult to debug.
+
+4.5 Enumerations
+
+An enum allows you to redefine the values you want, and the choices you want to make. The the enum can be used as a data type for example enum seatPreference {window =86, aisle, middle;
+then I can write enum seatPreference bobseatPrefence = aisle;
+}
+
+4.6 Using typedef
+When stat starts getting large and more clunky you can define your own type fed instead of using enum (name) all the time. you can just create typedef enum {x = 99, y = 100} seatPref and from then on just use seatPref, bobSeatPref = y
+
+4.7 Predecessor directives  make something happen for example
+#import - a way of including all these files into our code.
+#define - allows us to create a macro, usually written in all caps. the macro is not changeable i.e. something that really needs to be fixed such as PI.
+#debug can be hidden when you move into release mode. THe #import  directive can be used to get code from another place to add into your code making it easier. the #define would be used to set variables that you don't want changed within your code that would stay the same for a specific reason. and the debug would be used so that when you are done, you don't have to filter out all the unnecessary code required when the code is released.
+
+4.8 Working on strings
+NSString is part of the foundation framework. NSString *message = @"Hello"; would be written as opposed to string message = "Hello";
+NSString defines that it is a string though its not in itself an objective-C type. *message shows that it is a pointer to the string, and Hello is the output. 
+
+Section 5
+
+5.1 Introduction to object orientation
+Class 			mobileMakersParticipant
+Properties		gender, age, experience level, name
+Methods			study, create app, listen
+
+Object
+Jessica
+Gender Female
+Age 26
+Experience Level Beginner
+Name Jessica
+
+Methods 
+Study, Create app, listen
+
+5.2 Using objects and pointers
+A pointers role is to point to an address where the information's stored. It is different from a primitive as it's not actually a char or integer, but just a reference pointer to someplace else.
+
+5.3 Messages and methods
+Objective C does not uses dots as its syntax and it requires a break down of the code. It makes for longer methods, however you are able to more clearly see the parameters etc and the information. This can be seen as an advantage in programming since you can understand the information you are passing on.
+
+5.4
+An intense method needs something to work on already. 
+It tells you if it is a class method or instance reference. a plus sign denotes class methods and a - means instances methods. The date for example is a class method and you must use the class. Use autofill feature
+
+Section 6
+6.2 Memory management in Objective-C
+The relationship between a pointer and an object is that the pointer shows the address of an object. A memory block is used when you create an object and there is a retainer of 1 given for it. The rule is that is you own the object you must release it, and if you do not own it, you must not.
+For example of you create the object dog and then you command it to bark, you must release the dog when it is finished doing what it should do.
+
+6.3 Object creation
+We avoid using the new method as it limits our ability with strings.An object could last forever which is why if it os our responsibility then we end it when we would to free the memory
+
+6.4 Using autorelease pools
+The autorelease pool just releases sometime in the future, when the call is pool drain. You can use it take make sure your object will last long enough to pass back, when you don't know exactly when it will be called.
+
+6.5 Apple autorelease objects
+NARC stands for new, alloc, retain and copy. It is important to remember that these need to be released. Some like NSDate autorelease before they are returned  to you. 
+
+6.6 Introduction to ARC
+ARC saes us from having to use retain and release calls in figuring out the best place to use them - we can simply create objects the usual way using alloc and init, use them and we are done, which saves us from having to make extra effort.
+
+6.7 What ARC manages
+ARC considers  pointers as being strong references to understand whether the object is useful. Garbage collections different because while garbage collection is automatic it is done randomly. This means you don't know when it happens since it it unpredictable. 
+
+6.8 The rules of ARC
+You cannot call memory management methods when using ARC. ARC forbids this so it can understand what it needs to do
+
+Section 7
+7.1 Creating your own classes
+There are two sections used to create a class - the interface and the implementation section.
+In the interface we will put the properties and methods.
+
+@interface Tweet : NSObject
+
+@property NSString *nameTweeter;
+@property NSDate *timeTweeted;
+@property NSString *tweetMessage;
+
+-(void) someMethod;
+
+@end
+
+@implementation Tweet
+
+@synthesize name, time, tweet
+
+-(void) someMethod {
+NSLog (@"The tweet is %@", someMEthod);
+}
+@end
+
+7.2 Defining methods
+I'm not overly confident that I understand these concepts yet, however I think this means to me that in the main.m, that the properties should get passed in and then replaced with actual variables. The method should be classed so that it returns the appropriate tweet?
+
+7.3 Defining properties
+Before 2012 you would define an instance variable in the interface file.
+Handled now - you can still do this but you have to write accessor methods which can be very tedious.
+Now there are properties which automatically synthesise. This generates the getter and setter methods.
+
+7.4 Defining initialisers
+An init initialises a new object and make sure its created in a valid state. Init can be written custom or you can rely on a standard intit. If you want to write a custom method you write initWithSomething. It needs to go into the interface so it is visible. You can do this to pass in numbers. 
+
+7.5 Using dealloc
+With ARC turned on you can't call dealloc yourself as that is what ARC is managing. The method calls itself when it sees fit. You could use it as 'clean-up' to make sure code was released.
+
+Section 8
+8.1 Working with C-Style arrays
+Constraints - there are no bounds checkings, there is a fixed size - the arrays are at particular sizes. You cannot just add or remove elements. Finally, you can't mix types it has to be ints or string pointers.
+
+NSString *myStringArray[7] = {@"monday",@"tuesday",@"wednesday",@"thursday",@friday,"@saturday",@"sunday"};
+
+
+8.2 Working with Objective-C array objects
+An immutable array is unable to be changed, where a mutable array is a subset of NSArray and therefore offers the same options but with more flexibility. 
+
+NSMutableArray *myArray = [NSMutableArray arrayWithObjects:@"One",nil];
+
+[myArray addObject:@"monday",@"tuesday",@"wednesday",@"thursday",@friday,"@saturday",@"sunday"];
+
+8.3 Using Dictionary
+NSDictionary *events =
+[NSDictionary dictionaryWithObjectsandKeys:
+@"Motocross Championships",@"March",
+@"Martial Ars Grading",@"October",
+@"Birthday Celebration",@"November",
+@"New Year Celebration:,@"January",
+@"Leap Year",""February:,
+nil];
+
+NSSTring *someEvent = @"March";
+
+NSLog(@" %@ is for S@", some Event, [events objectForKey:someEvent]));
+
+8.4 Fast Enumeration
+
+for (NSString *key in events){
+NSLog(@" %@ is for S@", key, [events objectForKey:someEvent]));
+}
+
+Section 9
+9.1 Introduction to file management in Objective-C
+Using the methods I am aware of in Objective c's foundation class there are a few things we can do with files, such as copy, move, file exists at agh (boolean), get attributes at a particular path, remove items etc.
+
+9.2
+NSURLs are faster than string paths, are better for catching errors and are used by more classes. The three parts are the scheme, the domain and then there is the path/query.
+
+9.3 Reading and writing strings
+You want to actually alter the file that you have obtained, and directly change the strings inside of it.
+
+9.4 Archiving objects
+You can use encoding to break the pieces of a file up, and you can also decode as well. For example if you want to save it to the file process you can use encodeWithCoder and it takes one parameter. Archiving means you can create a file that you save. The file is broken down into pieces. 
+
+Section 10
+10.1 Inheritance and NSObject
+You can determine what methods you're inheriting from a superclass, where the majority is inherence NSObjects anyway and that majority is derived from that but you can look at the Class Reference to see what functions and abilities you have,
+You override a method inherited from a superclass by providing your own version of it. You write method in your new class implementation with the same parameters and return type but the same signature. 
+
+10.2 Extending classes
+Difference between a category and inheritance
+Inheritance is inheriting from a superclass and creating our own subclass.
+Categories allow us to add our own methods to classes without subclassing them. Limitations of using a category - you cannot add new instance variables using categories, only methods.
+
+10.3 Defining protocols
+Protocols standardise interaction between objects without worrying about inheritance or formal relationship. Basically as long as you agree to conform to the protocols and write that into your implementation, that is enough for NSCoding to accept that you follow the two protocols.
+
+10.4 Dynamic typing
+This is helpful when you don't know what the object is in advance and will only find out at runtime. Obviously, static typing is easier to check as you go through, but dynamic typing gives you the ability to continue through when you don't know what the instances will be.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
